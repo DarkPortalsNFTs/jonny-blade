@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Blade Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{background:#0b0b0b;color:#fff;font-family:Arial;margin:0}
+    header{padding:18px 20px;border-bottom:1px solid #222;display:flex;justify-content:space-between;align-items:center}
+    .gold{color:#d4af37}
+    a{color:#d4af37;text-decoration:none}
+    main{padding:20px;max-width:1100px;margin:0 auto}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .card{background:#111;border:1px solid #222;border-radius:14px;padding:14px}
+    .price{color:#d4af37;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong class="gold">Blade</strong> Products</div>
+    <div><a href="/">Home</a> • <a href="/ai">AI</a> • <a href="/admin">Admin</a></div>
+  </header>
+  <main>
+    <h1 class="gold">Shop</h1>
+    <div class="grid">
+      <% if (!products.length) { %>
+        <div class="card">No products yet. Add some into the database when ready.</div>
+      <% } %>
+      <% products.forEach(p => { %>
+        <div class="card">
+          <div class="gold" style="font-weight:700"><%= p.name %></div>
+          <div style="opacity:.85;margin:8px 0"><%= p.description || "" %></div>
+          <div class="price">£<%= ((p.price_pence || 0)/100).toFixed(2) %></div>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+</body>
+</html>
