@@ -109,6 +109,26 @@
   </div>
 
   <section class="section franchise-spotlight" id="franchise-spotlight">
+    <% const franchiseProductImages = [
+      "/images/franchise/IMG-20260117-WA0002.jpg",
+      "/images/franchise/IMG-20260117-WA0003.jpg",
+      "/images/franchise/IMG-20260117-WA0005.jpg",
+      "/images/franchise/IMG-20260117-WA0007.jpg",
+      "/images/franchise/IMG-20260117-WA0008.jpg",
+      "/images/franchise/IMG-20260117-WA0009.jpg",
+      "/images/franchise/IMG-20260117-WA0010.jpg",
+      "/images/franchise/IMG-20260117-WA0011.jpg",
+      "/images/franchise/IMG-20260117-WA0012.jpg",
+      "/images/franchise/IMG-20260117-WA0014.jpg",
+      "/images/franchise/IMG-20260117-WA0015.jpg",
+      "/images/franchise/IMG-20260117-WA0016.jpg",
+      "/images/franchise/IMG-20260117-WA0017.jpg",
+      "/images/franchise/IMG-20260117-WA0020.jpg",
+      "/images/franchise/IMG-20260117-WA0021.jpg",
+      "/images/franchise/IMG-20260117-WA0022.jpg",
+      "/images/franchise/IMG-20260117-WA0023.jpg",
+      "/images/franchise/IMG-20260117-WA0024.jpg"
+    ]; %>
     <div class="split">
       <div>
         <p class="eyebrow">Franchise opportunity</p>
@@ -132,33 +152,69 @@
       </div>
       <div class="franchise-deck">
         <div class="franchise-slider" data-interval="5200">
-          <div class="franchise-slide is-active" data-title="A Recognised Brand" data-copy="Benefit from an established name that clients trust.">
-            <img src="/images/franchise-setup.svg" alt="Recognised franchise brand" />
-          </div>
-          <div class="franchise-slide" data-title="Proven Business Model" data-copy="Access our operational systems and marketing strategy.">
-            <img src="/images/franchise-support.svg" alt="Proven franchise model" />
-          </div>
-          <div class="franchise-slide" data-title="Full Training & Support" data-copy="We help with shop setup, staff training, and growth.">
-            <img src="/images/franchise-growth.svg" alt="Training and growth support" />
-          </div>
-          <div class="franchise-slide" data-title="Morriston Flagship" data-copy="Flagship energy and premium experience in every chair.">
-            <img src="/images/location-morriston.svg" alt="Morriston franchise location" />
-          </div>
-          <div class="franchise-slide" data-title="Gorseinon Demand" data-copy="High footfall, loyal clients, and fast turnaround.">
-            <img src="/images/location-gorseinon.svg" alt="Gorseinon franchise location" />
-          </div>
-          <div class="franchise-slide" data-title="Skewen Precision" data-copy="Community‑first service with consistent standards.">
-            <img src="/images/location-skewen.svg" alt="Skewen franchise location" />
-          </div>
+          <% const franchiseSpotlightSlides = [
+            {
+              image: "/images/franchise/IMG-20260117-WA0002.jpg",
+              title: "Franchise Interior",
+              copy: "Premium interiors that make clients feel elite."
+            },
+            {
+              image: "/images/franchise/IMG-20260117-WA0003.jpg",
+              title: "Signature Stations",
+              copy: "Built for speed, flow, and perfect finishes."
+            },
+            {
+              image: "/images/franchise/IMG-20260117-WA0005.jpg",
+              title: "Shop Floor Energy",
+              copy: "High-energy teams with a premium service rhythm."
+            },
+            {
+              image: "/images/franchise/IMG-20260117-WA0007.jpg",
+              title: "Brand Atmosphere",
+              copy: "A look and feel clients instantly recognize."
+            },
+            {
+              image: "/images/franchise/IMG-20260117-WA0008.jpg",
+              title: "Customer Experience",
+              copy: "The details that turn walk-ins into loyalists."
+            },
+            {
+              image: "/images/franchise/IMG-20260117-WA0009.jpg",
+              title: "Precision Standards",
+              copy: "Consistent delivery in every chair, every day."
+            },
+            {
+              image: "/images/franchise/1000022109.jpg",
+              title: "Franchise Info",
+              copy: "Key franchise details at a glance."
+            },
+            {
+              image: "/images/franchise/1000022115.jpg",
+              title: "Franchise Info",
+              copy: "More franchise details, ready to review."
+            }
+          ]; %>
+          <% franchiseSpotlightSlides.forEach((slide, idx) => { %>
+            <div class="franchise-slide <%= idx === 0 ? 'is-active' : '' %>" data-title="<%= slide.title %>" data-copy="<%= slide.copy %>">
+              <img src="<%= slide.image %>" alt="<%= slide.title %>" loading="lazy" />
+            </div>
+          <% }) %>
           <div class="franchise-caption">
-            <h4 id="franchise-slide-title">A Recognised Brand</h4>
-            <p id="franchise-slide-copy">Benefit from an established name that clients trust.</p>
+            <h4 id="franchise-slide-title">Franchise Interior</h4>
+            <p id="franchise-slide-copy">Premium interiors that make clients feel elite.</p>
           </div>
           <div class="franchise-dots" id="franchise-dots" role="tablist" aria-label="Franchise spotlight slides"></div>
         </div>
         <div class="franchise-products">
-          <% products.forEach((product) => { %>
+          <% products.forEach((product, index) => { %>
             <article class="franchise-product">
+              <div class="product-visual">
+                <img
+                  src="<%= franchiseProductImages[index % franchiseProductImages.length] %>"
+                  alt="<%= product.name %> product"
+                  loading="lazy"
+                />
+              </div>
               <div class="product-top">
                 <h4><%= product.name %></h4>
                 <span class="price">$<%= product.price %></span>
@@ -403,45 +459,54 @@
     <div class="staff-grid">
       <article class="staff-card accent-gold-1">
         <div class="staff-header">
-          <img class="staff-image" src="/images/staff/zaman.svg" alt="Zaman, senior skinfade specialist" />
+          <img class="staff-image" src="/images/staff/zaman.jpg" alt="Zaman" loading="lazy" />
           <div>
-            <p class="staff-role">Senior skinfade specialist</p>
+            <p class="staff-role">Skinfade specialist</p>
             <h3>Zaman</h3>
             <p class="staff-location">Morriston branch</p>
           </div>
         </div>
         <p class="staff-bio">
-          Eight years behind the chair with a sharp eye for skinfades and clean finishes.
+          Afghan barber with eight years behind the chair, known for crisp skinfades.
         </p>
         <ul class="staff-highlights">
+          <li>From: Afghan</li>
+          <li>Hobbies: watch football</li>
+          <li>Favorite food: kabab</li>
           <li>Experience: 8 years</li>
           <li>Signature: skinfade</li>
-          <li>Off-duty: gym + shopping</li>
+          <li>Day off: gym + shopping</li>
+          <li>Team: Man U + Real Madrid</li>
+          <li>Tools: Wahl + Gamma clippers</li>
         </ul>
         <a class="btn ghost" href="https://jonnybladespro.trafft.com/">Book with Zaman</a>
       </article>
       <article class="staff-card accent-gold-2">
         <div class="staff-header">
-          <img class="staff-image" src="/images/staff/leon.svg" alt="Leon, skinfade and texture specialist" />
+          <img class="staff-image" src="/images/staff/leon.jpg" alt="Leon" loading="lazy" />
           <div>
-            <p class="staff-role">Skinfade + texture specialist</p>
+            <p class="staff-role">Skinfade + messy top</p>
             <h3>Leon</h3>
             <p class="staff-location">Gorseinon branch</p>
           </div>
         </div>
         <p class="staff-bio">
-          Four years of clean blends and messy tops. Always sharp, always fresh.
+          Wales-born barber with four years of blends and textured finishes.
         </p>
         <ul class="staff-highlights">
+          <li>From: Wales</li>
+          <li>Favorite food: anything in front of me</li>
           <li>Experience: 4 years</li>
           <li>Signature: skinfade + messy top</li>
+          <li>Day off: spend the money made last week</li>
           <li>Team: Man Utd</li>
+          <li>Tools: JRL clippers</li>
         </ul>
         <a class="btn ghost" href="https://jonnybladespro.trafft.com/">Book with Leon</a>
       </article>
       <article class="staff-card accent-gold-3">
         <div class="staff-header">
-          <img class="staff-image" src="/images/staff/ben.svg" alt="Ben, burst fade specialist" />
+          <img class="staff-image" src="/images/staff/ben.jpg" alt="Ben" loading="lazy" />
           <div>
             <p class="staff-role">Burst fade specialist</p>
             <h3>Ben</h3>
@@ -449,37 +514,47 @@
           </div>
         </div>
         <p class="staff-bio">
-          Four years of detailed fades and classic shop energy. Precision with personality.
+          Swansea barber with four years of sharp fades and shop-floor energy.
         </p>
         <ul class="staff-highlights">
+          <li>From: Swansea</li>
+          <li>Hobbies: rugby + a pint</li>
+          <li>Favorite food: 10oz ribeye + chips</li>
           <li>Experience: 4 years</li>
           <li>Signature: burst fade</li>
+          <li>Day off: Saturday and Sunday with a pint</li>
           <li>Team: Birchgrove RFC</li>
+          <li>Tools: Gamma</li>
         </ul>
         <a class="btn ghost" href="https://jonnybladespro.trafft.com/">Book with Ben</a>
       </article>
       <article class="staff-card accent-gold-4">
         <div class="staff-header">
-          <img class="staff-image" src="/images/staff/charlie.svg" alt="Charlie, mid fade specialist" />
+          <img class="staff-image" src="/images/staff/charlie.jpg" alt="Charlie" loading="lazy" />
           <div>
-            <p class="staff-role">Mid fade + styling specialist</p>
+            <p class="staff-role">Mid skinfade specialist</p>
             <h3>Charlie</h3>
             <p class="staff-location">Morriston + Skewen</p>
           </div>
         </div>
         <p class="staff-bio">
-          Five years of modern cuts with sharp detail. Known for mid skinfades and clean flow.
+          Manchester-born barber with five years of modern cuts and detail work.
         </p>
         <ul class="staff-highlights">
+          <li>From: Manchester</li>
+          <li>Hobbies: football, tennis, pool, darts, clubbing</li>
+          <li>Favorite food: lasagne or homemade wraps</li>
           <li>Experience: 5 years</li>
           <li>Signature: mid skinfade</li>
+          <li>Day off: trim, beach, spend money</li>
           <li>Team: Arsenal</li>
+          <li>Tools: Wahl clippers</li>
         </ul>
         <a class="btn ghost" href="https://jonnybladespro.trafft.com/">Book with Charlie</a>
       </article>
       <article class="staff-card accent-gold-5">
         <div class="staff-header">
-          <img class="staff-image" src="/images/staff/alex.svg" alt="Alex, skin fade specialist" />
+          <img class="staff-image" src="/images/staff/alex.jpg" alt="Alex" loading="lazy" />
           <div>
             <p class="staff-role">Skin fade specialist</p>
             <h3>Alex</h3>
@@ -487,18 +562,23 @@
           </div>
         </div>
         <p class="staff-bio">
-          Four years of crisp fades with a relaxed, focused chair vibe.
+          Swansea barber with four years of clean fades and a calm, focused chair.
         </p>
         <ul class="staff-highlights">
+          <li>From: Swansea</li>
+          <li>Hobbies: boxing</li>
+          <li>Favorite food: Chinese</li>
           <li>Experience: 4 years</li>
           <li>Signature: skin fade</li>
+          <li>Day off: relaxing</li>
           <li>Team: Swansea FC</li>
+          <li>Tools: Gamma 50 Cal</li>
         </ul>
         <a class="btn ghost" href="https://jonnybladespro.trafft.com/">Book with Alex</a>
       </article>
       <article class="staff-card accent-gold-6">
         <div class="staff-header">
-          <img class="staff-image" src="/images/staff/cj.svg" alt="CJ, scissor cut specialist" />
+          <img class="staff-image" src="/images/staff/cj.jpg" alt="CJ" loading="lazy" />
           <div>
             <p class="staff-role">Scissor cut specialist</p>
             <h3>CJ</h3>
@@ -506,18 +586,23 @@
           </div>
         </div>
         <p class="staff-bio">
-          Clean, classic scissor work with a modern edge. Two years in the craft and rising fast.
+          Two years in the craft with clean scissor work and a modern edge.
         </p>
         <ul class="staff-highlights">
+          <li>From: Swansea</li>
+          <li>Hobbies: watching football</li>
+          <li>Favorite food: Sunday roast</li>
           <li>Experience: 2 years</li>
           <li>Signature: scissor cut</li>
-          <li>Team: Arsenal + Swansea</li>
+          <li>Day off: exploring</li>
+          <li>Team: Arsenal FC + Swansea FC</li>
+          <li>Tools: Gamma+ Pro Max Electric 0 Gap Extremes</li>
         </ul>
         <a class="btn ghost" href="https://jonnybladespro.trafft.com/">Book with CJ</a>
       </article>
       <article class="staff-card accent-gold-7">
         <div class="staff-header">
-          <img class="staff-image" src="/images/staff/dion-whyatt.svg" alt="Dion Whyatt, taper fade specialist" />
+          <img class="staff-image" src="/images/staff/dion-whyatt.png" alt="Dion Whyatt" loading="lazy" />
           <div>
             <p class="staff-role">Taper fade specialist</p>
             <h3>Dion Whyatt</h3>
@@ -525,12 +610,17 @@
           </div>
         </div>
         <p class="staff-bio">
-          Detail-focused fades and a steady hand. Two and a half years behind the chair.
+          Detail-focused fades and a steady hand, two and a half years behind the chair.
         </p>
         <ul class="staff-highlights">
+          <li>From: Swansea</li>
+          <li>Hobbies: working on my car, gambling</li>
+          <li>Favorite food: Indian</li>
           <li>Experience: 2.5 years</li>
           <li>Signature: taper fade</li>
+          <li>Day off: playing my PC</li>
           <li>Team: Wales</li>
+          <li>Tools: Stylecraft</li>
         </ul>
         <a class="btn ghost" href="https://jonnybladespro.trafft.com/">Book with Dion</a>
       </article>

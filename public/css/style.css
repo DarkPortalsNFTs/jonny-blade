@@ -228,6 +228,60 @@ a {
   }
 }
 
+@keyframes sectionGlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(20px, -12px, 0);
+  }
+}
+
+@keyframes sectionSweep {
+  0% {
+    transform: translate3d(-8%, 0, 0);
+  }
+  100% {
+    transform: translate3d(8%, -6%, 0);
+  }
+}
+
+@keyframes collageDrift {
+  0% {
+    background-position:
+      0 0,
+      80px 60px,
+      160px 20px,
+      40px 140px,
+      120px 200px,
+      200px 120px,
+      260px 40px,
+      320px 180px;
+  }
+  50% {
+    background-position:
+      -140px 80px,
+      -40px 140px,
+      60px 200px,
+      -60px 220px,
+      20px 280px,
+      80px 220px,
+      140px 120px,
+      200px 260px;
+  }
+  100% {
+    background-position:
+      -280px 140px,
+      -160px 220px,
+      -40px 260px,
+      -140px 320px,
+      -60px 360px,
+      0 300px,
+      80px 220px,
+      120px 320px;
+  }
+}
+
 @keyframes float {
   0%,
   100% {
@@ -389,6 +443,8 @@ h2 {
   padding: 28px;
   box-shadow: 0 20px 40px var(--shadow);
   backdrop-filter: blur(6px);
+  display: grid;
+  gap: 14px;
 }
 
 .hero-image {
@@ -396,7 +452,7 @@ h2 {
   height: 220px;
   object-fit: cover;
   border-radius: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 6px;
   border: 1px solid rgba(197, 162, 83, 0.35);
 }
 
@@ -410,11 +466,17 @@ h2 {
   letter-spacing: 2px;
 }
 
+.hero-card h3,
+.hero-card p {
+  margin: 0;
+}
+
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 20px;
+  gap: 18px;
+  margin-top: 12px;
+  text-align: center;
 }
 
 .hero-metrics strong {
@@ -449,9 +511,30 @@ h2 {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 10% 20%, rgba(197, 162, 83, 0.08), transparent 40%);
-  opacity: 0.6;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(197, 162, 83, 0.16), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.05), transparent 55%);
+  opacity: 0.7;
   pointer-events: none;
+  animation: sectionGlow 16s ease-in-out infinite;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  inset: -20% -10%;
+  background: repeating-linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 10%,
+    rgba(197, 162, 83, 0.06) 12%,
+    rgba(255, 255, 255, 0.04) 14%,
+    transparent 18%
+  );
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: sectionSweep 22s linear infinite;
 }
 
 .section-heading {
@@ -1042,8 +1125,56 @@ h2 {
 .franchise-products {
   margin-top: 28px;
   display: grid;
-  gap: 18px;
+  gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  position: relative;
+  padding: 28px;
+  border-radius: 26px;
+  background: rgba(6, 6, 6, 0.7);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.franchise-products::before {
+  content: '';
+  position: absolute;
+  inset: -25%;
+  background-image:
+    url('/images/staff/alex.jpg'),
+    url('/images/staff/ben.jpg'),
+    url('/images/staff/charlie.jpg'),
+    url('/images/staff/cj.jpg'),
+    url('/images/staff/leon.jpg'),
+    url('/images/staff/zaman.jpg'),
+    url('/images/staff/dion-whyatt.png'),
+    url('/images/instagram/insta-1.jpg');
+  background-size: 220px 220px;
+  background-repeat: repeat;
+  background-position:
+    0 0,
+    80px 60px,
+    160px 20px,
+    40px 140px,
+    120px 200px,
+    200px 120px,
+    260px 40px,
+    320px 180px;
+  opacity: 0.24;
+  filter: saturate(1.1) contrast(1.05) brightness(0.85);
+  animation: collageDrift 42s linear infinite;
+  transform: translateZ(0);
+  z-index: 0;
+}
+
+.franchise-products::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(197, 162, 83, 0.2), transparent 45%),
+    linear-gradient(120deg, rgba(8, 8, 8, 0.9), rgba(8, 8, 8, 0.65));
+  opacity: 0.85;
+  z-index: 0;
 }
 
 .franchise-product {
@@ -1054,6 +1185,28 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(197, 162, 83, 0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.franchise-product .product-visual {
+  border-radius: 14px;
+  background: radial-gradient(circle at top, rgba(197, 162, 83, 0.16), rgba(9, 9, 9, 0.8));
+  border: 1px solid rgba(197, 162, 83, 0.25);
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  height: 150px;
+}
+
+.franchise-product .product-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.35));
 }
 
 .franchise-product .product-top {
