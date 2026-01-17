@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Jonny Blades">
+  <defs>
+    <linearGradient id="jbBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0b" />
+      <stop offset="100%" stop-color="#1b140c" />
+    </linearGradient>
+    <radialGradient id="jbGlow" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#c5a253" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#0b0b0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#jbBg)" />
+  <rect width="512" height="512" rx="96" fill="url(#jbGlow)" />
+  <path d="M156 352c0-64 44-116 100-116s100 52 100 116" fill="none" stroke="#c5a253" stroke-width="20" stroke-linecap="round" />
+  <path d="M192 308c18 18 40 28 64 28s46-10 64-28" fill="none" stroke="#c5a253" stroke-width="14" stroke-linecap="round" stroke-dasharray="10 12" />
+  <circle cx="256" cy="202" r="68" fill="#17120f" stroke="#c5a253" stroke-width="14" />
+  <text x="256" y="462" text-anchor="middle" font-family="Cinzel, serif" font-size="56" fill="#c5a253" letter-spacing="6">JB</text>
+</svg>

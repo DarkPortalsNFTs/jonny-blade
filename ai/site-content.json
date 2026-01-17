@@ -1,0 +1,58 @@
+{
+  "sections": [
+    {
+      "id": "book",
+      "title": "Book Now",
+      "summary": "Book an appointment or walk in for a fresh cut.",
+      "keywords": ["book", "appointment", "walk in", "booking", "reserve", "schedule"]
+    },
+    {
+      "id": "services",
+      "title": "Services",
+      "summary": "Haircuts, beard work, hot towel shaves, waxing, and facial treatments.",
+      "keywords": ["services", "haircut", "fade", "skin fade", "taper", "scissor", "beard", "line up", "shave", "hot towel", "wax", "facial", "threading"]
+    },
+    {
+      "id": "shop",
+      "title": "Products",
+      "summary": "Precision Razor, Rich Shaving Cream, Beard Oil, Styling Pomade.",
+      "keywords": ["products", "razor", "cream", "beard oil", "pomade", "grooming"]
+    },
+    {
+      "id": "franchise",
+      "title": "Franchising",
+      "summary": "Own a Jonny Blades barbershop and grow with the brand. Get the franchise pack or book a discovery call.",
+      "keywords": ["franchise", "franchising", "business", "owner", "territory", "locations", "expansion", "franchise pack", "discovery call", "kit", "brand", "training", "support"]
+    },
+    {
+      "id": "movement",
+      "title": "Franchise + careers",
+      "summary": "Franchise opportunities and barber careers in the Jonny Blades movement.",
+      "keywords": ["movement", "franchise", "launch", "growth", "business", "territory", "support", "careers", "barber", "jobs", "hiring"]
+    },
+    {
+      "id": "app",
+      "title": "Jonny Blades App",
+      "summary": "Join the waitlist for booking, rewards, and style history in one place.",
+      "keywords": ["app", "mobile", "waitlist", "download", "booking", "rewards", "notify"]
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "summary": "Reach us at info@jonnyblades.uk or call 01792 002678.",
+      "keywords": ["contact", "email", "phone", "help", "support"]
+    },
+    {
+      "id": "faq",
+      "title": "FAQs",
+      "summary": "Appointment, pricing, locations, and payment questions answered.",
+      "keywords": ["faq", "questions", "pricing", "locations", "payment"]
+    },
+    {
+      "id": "socials",
+      "title": "Socials",
+      "summary": "Follow the latest cuts and promotions on Instagram, Facebook, TikTok.",
+      "keywords": ["social", "instagram", "facebook", "tiktok", "follow"]
+    }
+  ]
+}

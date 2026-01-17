@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520" role="img" aria-label="Franchise launch">
+  <defs>
+    <linearGradient id="frSetup" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0b" />
+      <stop offset="100%" stop-color="#1b140c" />
+    </linearGradient>
+    <radialGradient id="frSetupGlow" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#c5a253" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#0b0b0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="720" height="520" rx="36" fill="url(#frSetup)" />
+  <rect width="720" height="520" rx="36" fill="url(#frSetupGlow)" />
+  <rect x="80" y="110" width="560" height="60" rx="16" fill="#15100c" stroke="#c5a253" stroke-width="4" />
+  <rect x="120" y="200" width="480" height="60" rx="16" fill="#120f0c" stroke="#c5a253" stroke-width="3" />
+  <rect x="160" y="290" width="400" height="60" rx="16" fill="#14100c" stroke="#c5a253" stroke-width="3" />
+  <circle cx="132" cy="140" r="16" fill="#c5a253" />
+  <circle cx="172" cy="230" r="14" fill="#c5a253" />
+  <circle cx="210" cy="320" r="12" fill="#c5a253" />
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="Alex">
+  <defs>
+    <linearGradient id="alexGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0b" />
+      <stop offset="100%" stop-color="#19130d" />
+    </linearGradient>
+    <radialGradient id="alexAccent" cx="25%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#b59248" stop-opacity="0.5" />
+      <stop offset="70%" stop-color="#0b0b0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="640" rx="48" fill="url(#alexGlow)" />
+  <rect width="640" height="640" rx="48" fill="url(#alexAccent)" />
+  <circle cx="320" cy="235" r="94" fill="#1f1711" stroke="#b59248" stroke-width="6" />
+  <path d="M160 520c26-118 116-178 160-178s134 60 160 178" fill="#17120f" stroke="#b59248" stroke-width="6" stroke-linecap="round" />
+  <path d="M205 404c38 28 80 42 115 42s77-14 115-42" fill="none" stroke="#b59248" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12" />
+</svg>

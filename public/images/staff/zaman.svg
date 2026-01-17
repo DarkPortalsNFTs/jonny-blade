@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="Zaman">
+  <defs>
+    <linearGradient id="zamanGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0b" />
+      <stop offset="100%" stop-color="#1a1410" />
+    </linearGradient>
+    <radialGradient id="zamanAccent" cx="30%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#c5a253" stop-opacity="0.55" />
+      <stop offset="70%" stop-color="#0b0b0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="640" rx="48" fill="url(#zamanGlow)" />
+  <rect width="640" height="640" rx="48" fill="url(#zamanAccent)" />
+  <circle cx="320" cy="240" r="96" fill="#1f1a16" stroke="#c5a253" stroke-width="6" />
+  <path d="M170 520c22-108 110-176 150-176s128 68 150 176" fill="#17120f" stroke="#c5a253" stroke-width="6" stroke-linecap="round" />
+  <path d="M190 410c40 30 88 46 130 46s90-16 130-46" fill="none" stroke="#c5a253" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12" />
+</svg>

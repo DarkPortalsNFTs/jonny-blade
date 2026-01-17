@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="Charlie">
+  <defs>
+    <linearGradient id="charlieGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0b" />
+      <stop offset="100%" stop-color="#1c140c" />
+    </linearGradient>
+    <radialGradient id="charlieAccent" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#e1c37a" stop-opacity="0.5" />
+      <stop offset="70%" stop-color="#0b0b0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="640" rx="48" fill="url(#charlieGlow)" />
+  <rect width="640" height="640" rx="48" fill="url(#charlieAccent)" />
+  <circle cx="320" cy="240" r="96" fill="#1f1812" stroke="#e1c37a" stroke-width="6" />
+  <path d="M160 520c24-114 116-182 160-182s136 68 160 182" fill="#17120f" stroke="#e1c37a" stroke-width="6" stroke-linecap="round" />
+  <path d="M205 408c40 28 80 42 115 42s75-14 115-42" fill="none" stroke="#e1c37a" stroke-width="5" stroke-linecap="round" stroke-dasharray="9 11" />
+</svg>
